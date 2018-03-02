@@ -119,4 +119,7 @@ footer {
 		line-height: 25px;
 		margin-bottom: 40px;
 	}
+	.emoji {
+		margin-top: 1px;
+	}
 }
