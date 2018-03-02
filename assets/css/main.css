@@ -80,9 +80,7 @@ section {
 h1 {
 	font-weight: bold;
 	width: 110px;
-	border-bottom: 2px solid #000;
 	margin-bottom: 15px;
-	padding-bottom: 15px;
 }
 li {
 	line-height: 1.6;
@@ -107,7 +105,7 @@ footer {
 	}
 	.emoji {
 		margin-left: 0;
-		margin-right: 10px
+		margin-right: 8px;
 	}
 }
 @media (max-width: 420px) {
@@ -121,5 +119,6 @@ footer {
 	}
 	.emoji {
 		margin-top: 1px;
+		margin-right: 4px;
 	}
 }
