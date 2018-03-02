@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
-		<script>
-		function changeCSS(cssFile, cssLinkIndex) {
-
-    var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-
-    var newlink = document.createElement("link");
-    newlink.setAttribute("rel", "stylesheet");
-    newlink.setAttribute("type", "text/css");
-    newlink.setAttribute("href", cssFile);
-
-    document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
-		}
-		</script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Andrew Possehl</title>
@@ -25,8 +12,6 @@
     <link rel="stylesheet" href="https://use.typekit.net/ynj4zlh.css">
 	</head>
 	<body>
-		<a href="#" onclick="changeCSS('assets/css/light.css', 0);">STYLE 1</a>
-		<a href="#" onclick="changeCSS('assets/css/dark.css', 0);">STYLE 2</a>
 		<div class="wrap fade">
 			<section>
 				<span class="emoji">👋</span>
