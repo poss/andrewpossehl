@@ -44,17 +44,17 @@ table {
 
 /* My styles */
 body {
-	font-family: "lato", Helvetica, sans-serif;
+	font-family: "anonymous-pro", Courier, monospace, sans-serif;
 }
 .wrap {
-	margin: 40px 0 0 100px;
-	width: 400px;
+	margin: 80px 0 0 120px;
+	width: 420px;
 }
 section {
-	font-size: 22px;
-	line-height: 32px;
+	font-size: 20px;
+	line-height: 28px;
 	color: #000;
-	margin-top: 60px;
+	margin-bottom: 60px;
 }
 .emoji {
 	float: left;
@@ -64,22 +64,24 @@ section {
 h1 {
 	font-weight: bold;
 	width: 110px;
-	border-bottom: 2px solid #EBEBEB;
+	border-bottom: 2px solid #000;
 	margin-bottom: 15px;
 	padding-bottom: 15px;
 }
 section p span {
 	font-weight: bold;
 }
+li {
+	line-height: 1.6;
+}
 a {
 	color: #000;
 	text-decoration: none;
-	box-shadow: inset 0 -1px 0 rgb(0,120,255);
+	box-shadow: inset 0 -2px 0 rgb(0,120,255);
 }
 a:hover {
 	color: rgb(0,120,255);
 }
 footer {
 	font-size: 13px;
-	color: #A4A4A4;
 }
