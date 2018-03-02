@@ -41,7 +41,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 /* My styles */
 body {
 	font-family: "anonymous-pro", Courier, monospace, sans-serif;
@@ -89,17 +88,21 @@ footer {
 @media (max-width: 600px) {
 	.wrap {
 		margin: 0;
-		padding: 40px 40px 40px 80px;
 		width: auto;
+		padding: 40px;
+	}
+	.emoji {
+		margin-left: 0;
+		margin-right: 10px
 	}
 }
 @media (max-width: 420px) {
 	.wrap {
-		padding: 30px 10px 30px 50px;
+		padding: 25px;
 	}
 	section {
-		font-size: 18px;
-		line-height: 26px;
+		font-size: 17px;
+		line-height: 25px;
 		margin-bottom: 40px;
 	}
 }
