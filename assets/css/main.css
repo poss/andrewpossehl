@@ -86,3 +86,20 @@ a:hover {
 footer {
 	font-size: 13px;
 }
+@media (max-width: 600px) {
+	.wrap {
+		margin: 0;
+		padding: 40px 40px 40px 80px;
+		width: auto;
+	}
+}
+@media (max-width: 420px) {
+	.wrap {
+		padding: 30px 10px 30px 50px;
+	}
+	section {
+		font-size: 18px;
+		line-height: 26px;
+		margin-bottom: 40px;
+	}
+}
