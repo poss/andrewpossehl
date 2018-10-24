@@ -24,7 +24,7 @@
 			<section>
 				<span class="emoji">👋</span>
 				<h1>Info</h1>
-				<p>TEST I'm <a href="http://instagram.com/poss" alt="Andrew's Instagram">Andrew Possehl</a>, a designer and musician living in <a href="http://tv.giphy.com/nyc" alt="New York City">NYC</a>. I work at <a href="http://nationbuilder.com" alt="NationBuilder">NationBuilder</a>, helping build a software platform for leaders. I also play in <a href="https://soonermusic.bandcamp.com" alt="Sooner's Bandcamp">Sooner</a>, a Brooklyn-based <a href="http://tv.giphy.com/shoegaze" alt="Shoegazing">shoegaze</a> band.</p>
+				<p>I'm <a href="http://instagram.com/poss" alt="Andrew's Instagram">Andrew Possehl</a>, a designer and musician living in <a href="http://tv.giphy.com/nyc" alt="New York City">NYC</a>. I work at <a href="http://nationbuilder.com" alt="NationBuilder">NationBuilder</a>, helping build a software platform for leaders. I also play in <a href="https://soonermusic.bandcamp.com" alt="Sooner's Bandcamp">Sooner</a>, a Brooklyn-based <a href="http://tv.giphy.com/shoegaze" alt="Shoegazing">shoegaze</a> band.</p>
 			</section>
 			<section>
 				<span class="emoji">🔗</span>
