@@ -36,7 +36,7 @@
 				</ul>
 			</section>
 			<footer>
-				<p>© 2018, Andrew Possehl</p>
+				<p>© <?php echo date("Y"); ?>, Andrew Possehl</p>
 			</footer>
 		</div>
 	</body>
