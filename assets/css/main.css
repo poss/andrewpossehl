@@ -57,7 +57,7 @@ body {
 }
 .wrap {
 	margin: 80px 0 0 120px;
-	width: 420px;
+	width: 400px;
 	opacity:0;
 	animation: `fadein` 2s cubic-bezier(0.38, 0.2, 0, 0.88) forwards;
   -moz-animation: fadein 2s cubic-bezier(0.38, 0.2, 0, 0.88) forwards;
