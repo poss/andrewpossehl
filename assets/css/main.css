@@ -45,7 +45,7 @@ body {
 }
 .wrap {
 	margin: 60px 0 0 120px;
-	width: 500px;
+	width: 420px;
 	opacity:0;
 	animation: fadein 2s cubic-bezier(0.38, 0.2, 0, 0.88) forwards;
   -moz-animation: fadein 2s cubic-bezier(0.38, 0.2, 0, 0.88) forwards;
@@ -65,13 +65,13 @@ section {
 }
 h1 {
 	font-weight: bold;
-	line-height: 1.7;
+	line-height: 1.6;
 }
 p {
-	margin-top: 25px;
+	margin-top: 15px;
 }
 ul {
-	margin-top: 25px;
+	margin-top: 15px;
 }
 li {
 	line-height: 1.6;
@@ -89,7 +89,7 @@ footer {
 	font-size: 13px;
 	padding-bottom: 30px;
 }
-@media (max-width: 680px) {
+@media (max-width: 600px) {
 	.wrap {
 		margin: 0;
 		width: auto;
@@ -100,7 +100,7 @@ footer {
 		margin-right: 8px;
 	}
 }
-@media (max-width: 500px) {
+@media (max-width: 420px) {
 	.wrap {
 		padding: 25px;
 	}
