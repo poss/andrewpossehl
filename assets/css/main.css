@@ -53,8 +53,8 @@ body {
   -o-animation: fadein 2s cubic-bezier(0.38, 0.2, 0, 0.88) forwards;
 }
 section {
-	font-size: 18px;
-	line-height: 26px;
+	font-size: 19px;
+	line-height: 27px;
 	color: #000;
 	margin-bottom: 60px;
 }
