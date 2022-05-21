@@ -53,8 +53,8 @@ body {
   -o-animation: fadein 2s cubic-bezier(0.38, 0.2, 0, 0.88) forwards;
 }
 section {
-	font-size: 18px;
-	line-height: 26px;
+	font-size: 20px;
+	line-height: 28px;
 	color: #000;
 	margin-bottom: 60px;
 }
@@ -105,8 +105,8 @@ footer {
 		padding: 25px;
 	}
 	section {
-		font-size: 15px;
-		line-height: 23px;
+		font-size: 18px;
+		line-height: 26px;
 		margin-bottom: 40px;
 	}
 	.emoji {
