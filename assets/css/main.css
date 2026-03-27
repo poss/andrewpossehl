@@ -32,14 +32,19 @@
 /* ---- Theme toggle ---- */
 .theme-toggle {
 	position: fixed;
-	top: 20px;
-	right: 20px;
+	top: 16px;
+	right: 16px;
 	z-index: 10;
 	background: none;
 	border: none;
 	cursor: pointer;
 	color: var(--text-secondary);
-	padding: 6px;
+	padding: 12px;
+	min-width: 44px;
+	min-height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	transition: color 0.3s ease;
 }
 
@@ -164,7 +169,7 @@ body {
 	z-index: 1;
 	max-width: 600px;
 	margin: 0 auto;
-	padding: 18vh 24px 16vh;
+	padding: 18svh 24px 16svh;
 }
 
 @keyframes content-in {
@@ -268,6 +273,8 @@ body {
 	font-weight: 500;
 	color: var(--text-secondary);
 	text-decoration: none;
+	padding: 8px 0;
+	min-height: 44px;
 	transition: color 0.2s ease;
 }
 
@@ -308,21 +315,33 @@ body {
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
 	.content {
-		padding: 12vh 24px 12vh;
+		padding: 12svh 24px 12svh;
 	}
 
 	.bio {
 		font-size: 1.125rem;
 	}
 
+	.mark {
+		margin-bottom: 24px;
+	}
+
 	.geo-1, .geo-5, .geo-7 {
 		display: none;
+	}
+
+	.geo {
+		transform: scale(0.7);
 	}
 }
 
 @media (max-width: 420px) {
+	.geo-bg {
+		display: none;
+	}
+
 	.content {
-		padding: 10vh 20px 10vh;
+		padding: 10svh 20px 10svh;
 	}
 
 	.bio {
