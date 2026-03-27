@@ -1,3 +1,3 @@
-## What's this about?
+# andrewpossehl.com
 
-I need a personal site. So this is it...for now :)
+Personal website. Hosted on GitHub Pages.
