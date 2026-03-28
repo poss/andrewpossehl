@@ -192,8 +192,9 @@ body {
 	animation: content-in 0.8s 0.25s ease-out forwards;
 }
 
-.bio {
+h1.bio {
 	font-size: 1.25rem;
+	font-weight: normal;
 	line-height: 1.75;
 	color: var(--text-secondary);
 	max-width: 530px;
