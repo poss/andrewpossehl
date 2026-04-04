@@ -1,5 +1,9 @@
 # andrewpossehl.com
 
-Personal website. Hosted on GitHub Pages at [andrewpossehl.com](https://andrewpossehl.com).
+Personal website — live at [andrewpossehl.com](https://andrewpossehl.com).
 
-Built with vanilla HTML, CSS, and minimal JavaScript — no frameworks or build tools.
+## Stack
+
+- Vanilla HTML, CSS, and minimal JavaScript
+- No frameworks or build tools
+- Hosted on GitHub Pages
