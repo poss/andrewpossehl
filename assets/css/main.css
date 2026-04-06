@@ -1,3 +1,11 @@
+@font-face {
+	font-family: 'Space Grotesk';
+	src: url('../fonts/SpaceGrotesk.woff2') format('woff2');
+	font-weight: 400 600;
+	font-style: normal;
+	font-display: swap;
+}
+
 *, *::before, *::after {
 	margin: 0;
 	padding: 0;
@@ -50,6 +58,13 @@
 
 .theme-toggle:hover {
 	color: var(--text-primary);
+}
+
+/* ---- Focus styles ---- */
+:focus-visible {
+	outline: 2px solid var(--text-secondary);
+	outline-offset: 2px;
+	border-radius: 2px;
 }
 
 .icon-moon { display: none; }
@@ -337,8 +352,14 @@ h1.bio {
 }
 
 @media (max-width: 420px) {
-	.geo-bg {
+	.geo {
 		display: none;
+	}
+
+	.geo-2, .geo-4 {
+		display: block;
+		transform: scale(0.5);
+		opacity: 0;
 	}
 
 	.content {
