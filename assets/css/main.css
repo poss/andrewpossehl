@@ -18,6 +18,18 @@
 	--bg: #faf9f7;
 	--border: #e5e7eb;
 	--selection: #DC2626;
+	--toggle-bg: rgba(250, 249, 247, 0.74);
+	--toggle-border: rgba(17, 24, 39, 0.1);
+	--toggle-shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+	--geo-blue: #2563eb;
+	--geo-red: #dc2626;
+	--geo-green: #15803d;
+	--geo-yellow: #ca8a04;
+	--geo-orange: #ea580c;
+	--geo-purple: #7c3aed;
+	--geo-neutral: rgba(17, 24, 39, 0.72);
+	--geo-opacity: 0.13;
+	color-scheme: light;
 }
 
 [data-theme="dark"] {
@@ -26,10 +38,18 @@
 	--bg: #141414;
 	--border: #2a2a2a;
 	--selection: #EAB308;
-}
-
-[data-theme="dark"] .geo-bg {
-	filter: brightness(1.8) saturate(1.2);
+	--toggle-bg: rgba(20, 20, 20, 0.74);
+	--toggle-border: rgba(229, 229, 229, 0.11);
+	--toggle-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+	--geo-blue: #4f7ee8;
+	--geo-red: #e25d56;
+	--geo-green: #3d9a63;
+	--geo-yellow: #d5a82e;
+	--geo-orange: #dd7a33;
+	--geo-purple: #9a74df;
+	--geo-neutral: rgba(229, 229, 229, 0.56);
+	--geo-opacity: 0.16;
+	color-scheme: dark;
 }
 
 ::selection {
@@ -43,21 +63,37 @@
 	top: 16px;
 	right: 16px;
 	z-index: 10;
-	background: none;
-	border: none;
+	width: 44px;
+	height: 44px;
+	background: var(--toggle-bg);
+	border: 1px solid var(--toggle-border);
+	border-radius: 50%;
+	box-shadow: var(--toggle-shadow);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
 	cursor: pointer;
 	color: var(--text-secondary);
-	padding: 12px;
+	padding: 0;
 	min-width: 44px;
 	min-height: 44px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: color 0.3s ease;
+	transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .theme-toggle:hover {
 	color: var(--text-primary);
+	transform: translateY(-1px);
+}
+
+.theme-toggle:active {
+	transform: translateY(0);
+}
+
+.theme-toggle svg {
+	width: 16px;
+	height: 16px;
 }
 
 /* ---- Focus styles ---- */
@@ -65,6 +101,10 @@
 	outline: 2px solid var(--text-secondary);
 	outline-offset: 2px;
 	border-radius: 2px;
+}
+
+.theme-toggle:focus-visible {
+	border-radius: 50%;
 }
 
 .icon-moon { display: none; }
@@ -90,30 +130,38 @@ body {
 	pointer-events: none;
 	z-index: 0;
 	overflow: hidden;
-	color: var(--text-primary);
-	transition: filter 0.4s ease, color 0.4s ease;
+	color: var(--geo-neutral);
+	transition: color 0.4s ease;
 }
 
 .geo {
 	position: absolute;
 	opacity: 0;
+	--geo-scale: 1;
+	transform-origin: center;
+	will-change: opacity, transform;
+}
+
+.geo svg {
+	display: block;
+	overflow: visible;
 }
 
 /* Mobile / wire form */
 .geo-1 {
-	top: 2%;
-	right: 6%;
+	top: -8%;
+	right: -12%;
 	animation: geo-fade-in 2.5s 0.2s ease-out forwards, sway-1 24s 2.7s ease-in-out infinite;
 }
 /* Spiral */
 .geo-2 {
-	bottom: 5%;
-	left: 3%;
+	bottom: 3%;
+	left: -2%;
 	animation: geo-fade-in 2.5s 0.5s ease-out forwards, sway-2 28s 3s ease-in-out infinite;
 }
 /* Biomorphic blob */
 .geo-3 {
-	top: 50%;
+	top: 56%;
 	right: 2%;
 	animation: geo-fade-in 2.5s 0.8s ease-out forwards, sway-3 22s 3.3s ease-in-out infinite;
 }
@@ -125,57 +173,57 @@ body {
 }
 /* Flowing line */
 .geo-5 {
-	top: 30%;
-	right: 20%;
+	top: auto;
+	right: 22%;
+	bottom: -3%;
 	animation: geo-fade-in 2.5s 1.4s ease-out forwards, sway-5 20s 3.9s ease-in-out infinite;
 }
 /* Abstract face */
 .geo-6 {
-	bottom: 15%;
-	left: 22%;
+	bottom: 12%;
+	left: 32%;
 	animation: geo-fade-in 2.5s 1.7s ease-out forwards, sway-6 26s 4.2s ease-in-out infinite;
 }
 /* Dangling curve */
 .geo-7 {
 	bottom: 2%;
-	right: 15%;
+	right: 11%;
 	animation: geo-fade-in 2.5s 2s ease-out forwards, sway-1 32s 4.5s ease-in-out infinite;
 }
 
 @keyframes geo-fade-in {
-	from { opacity: 0; transform: scale(0.9) rotate(-2deg); }
-	to { opacity: 0.18; transform: scale(1) rotate(0deg); }
+	from { opacity: 0; }
+	to { opacity: var(--geo-opacity); }
 }
-/* Gentle swaying — like a Calder mobile in a breeze */
 @keyframes sway-1 {
-	0%, 100% { transform: translate(0, 0) rotate(0deg); }
-	25% { transform: translate(5px, -8px) rotate(1.5deg); }
-	50% { transform: translate(-3px, -4px) rotate(-1deg); }
-	75% { transform: translate(4px, 3px) rotate(0.5deg); }
+	0%, 100% { transform: translate(0, 0) rotate(0deg) scale(var(--geo-scale)); }
+	25% { transform: translate(5px, -8px) rotate(1.5deg) scale(var(--geo-scale)); }
+	50% { transform: translate(-3px, -4px) rotate(-1deg) scale(var(--geo-scale)); }
+	75% { transform: translate(4px, 3px) rotate(0.5deg) scale(var(--geo-scale)); }
 }
 @keyframes sway-2 {
-	0%, 100% { transform: translate(0, 0) rotate(0deg); }
-	33% { transform: translate(-6px, 5px) rotate(-1.5deg); }
-	66% { transform: translate(4px, -6px) rotate(1deg); }
+	0%, 100% { transform: translate(0, 0) rotate(0deg) scale(var(--geo-scale)); }
+	33% { transform: translate(-6px, 5px) rotate(-1.5deg) scale(var(--geo-scale)); }
+	66% { transform: translate(4px, -6px) rotate(1deg) scale(var(--geo-scale)); }
 }
 @keyframes sway-3 {
-	0%, 100% { transform: translate(0, 0) rotate(0deg); }
-	50% { transform: translate(-8px, -10px) rotate(2deg); }
+	0%, 100% { transform: translate(0, 0) rotate(0deg) scale(var(--geo-scale)); }
+	50% { transform: translate(-8px, -10px) rotate(2deg) scale(var(--geo-scale)); }
 }
 @keyframes sway-4 {
-	0%, 100% { transform: translate(0, 0) rotate(0deg); }
-	25% { transform: translate(6px, -4px) rotate(1deg); }
-	50% { transform: translate(2px, -10px) rotate(-0.5deg); }
-	75% { transform: translate(-4px, -6px) rotate(1.5deg); }
+	0%, 100% { transform: translate(0, 0) rotate(0deg) scale(var(--geo-scale)); }
+	25% { transform: translate(6px, -4px) rotate(1deg) scale(var(--geo-scale)); }
+	50% { transform: translate(2px, -10px) rotate(-0.5deg) scale(var(--geo-scale)); }
+	75% { transform: translate(-4px, -6px) rotate(1.5deg) scale(var(--geo-scale)); }
 }
 @keyframes sway-5 {
-	0%, 100% { transform: translate(0, 0) rotate(0deg); }
-	50% { transform: translate(-5px, 8px) rotate(-1.5deg); }
+	0%, 100% { transform: translate(0, 0) rotate(0deg) scale(var(--geo-scale)); }
+	50% { transform: translate(-5px, 8px) rotate(-1.5deg) scale(var(--geo-scale)); }
 }
 @keyframes sway-6 {
-	0%, 100% { transform: translate(0, 0) rotate(0deg); }
-	33% { transform: translate(4px, -5px) rotate(1deg); }
-	66% { transform: translate(-6px, 3px) rotate(-1deg); }
+	0%, 100% { transform: translate(0, 0) rotate(0deg) scale(var(--geo-scale)); }
+	33% { transform: translate(4px, -5px) rotate(1deg) scale(var(--geo-scale)); }
+	66% { transform: translate(-6px, 3px) rotate(-1deg) scale(var(--geo-scale)); }
 }
 
 /* ---- Content ---- */
@@ -275,17 +323,23 @@ h1.bio {
 	}
 
 	.geo {
-		opacity: 0.18;
+		opacity: var(--geo-opacity);
 	}
 }
 
 /* ---- Responsive ---- */
+@media (max-width: 1100px) {
+	.geo-5 {
+		display: none;
+	}
+}
+
 @media (max-width: 640px) {
 	.content {
 		padding: 12svh 24px 12svh;
 	}
 
-	.bio {
+	h1.bio {
 		font-size: 1.125rem;
 	}
 
@@ -298,7 +352,7 @@ h1.bio {
 	}
 
 	.geo {
-		transform: scale(0.7);
+		--geo-scale: 0.72;
 	}
 }
 
@@ -309,7 +363,7 @@ h1.bio {
 
 	.geo-2, .geo-4 {
 		display: block;
-		transform: scale(0.5);
+		--geo-scale: 0.54;
 		opacity: 0;
 	}
 
@@ -317,7 +371,7 @@ h1.bio {
 		padding: 10svh 20px 10svh;
 	}
 
-	.bio {
+	h1.bio {
 		font-size: 1rem;
 	}
 

@@ -6,6 +6,7 @@
 		<title>Andrew Possehl</title>
 		<meta name="description" content="Andrew Possehl is a designer based in Brooklyn, NY. Currently building products at Meta.">
 		<meta name="author" content="Andrew Possehl">
+		<meta name="color-scheme" content="light dark">
 		<meta property="og:title" content="Andrew Possehl">
 		<meta property="og:description" content="Designer based in Brooklyn, NY. Currently building products at Meta.">
 		<meta property="og:type" content="website">
@@ -19,6 +20,21 @@
 		<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 		<link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="32x32">
 		<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+		<script>
+			(() => {
+				const root = document.documentElement;
+				let saved = null;
+
+				try {
+					saved = localStorage.getItem('theme');
+				} catch {
+					saved = null;
+				}
+
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				root.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+			})();
+		</script>
 		<link rel="stylesheet" type="text/css" href="assets/css/main.css" media="screen" />
 	</head>
 	<body>
@@ -51,27 +67,27 @@
 			<!-- Mobile-like form: wire with dangling shapes -->
 			<div class="geo geo-1">
 				<svg viewBox="0 0 360 400" width="360" height="400" fill="none">
-					<path d="M40,200 C40,200 90,80 180,120 C270,160 200,280 280,300" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round"/>
-					<circle cx="280" cy="300" r="18" fill="#1D4ED8" opacity="0.45"/>
-					<path d="M130,120 L130,60" stroke="#1D4ED8" stroke-width="1.5" stroke-linecap="round"/>
-					<circle cx="130" cy="50" r="8" fill="none" stroke="#1D4ED8" stroke-width="1.5"/>
-					<path d="M220,170 L240,220" stroke="#1D4ED8" stroke-width="1.5" stroke-linecap="round"/>
-					<circle cx="245" cy="232" r="12" fill="#DC2626" opacity="0.4"/>
+					<path d="M40,200 C40,200 90,80 180,120 C270,160 200,280 280,300" stroke="var(--geo-blue)" stroke-width="2" stroke-linecap="round"/>
+					<circle cx="280" cy="300" r="18" fill="var(--geo-blue)" opacity="0.45"/>
+					<path d="M130,120 L130,60" stroke="var(--geo-blue)" stroke-width="1.5" stroke-linecap="round"/>
+					<circle cx="130" cy="50" r="8" fill="none" stroke="var(--geo-blue)" stroke-width="1.5"/>
+					<path d="M220,170 L240,220" stroke="var(--geo-blue)" stroke-width="1.5" stroke-linecap="round"/>
+					<circle cx="245" cy="232" r="12" fill="var(--geo-red)" opacity="0.4"/>
 				</svg>
 			</div>
 			<!-- Flowing spiral form -->
 			<div class="geo geo-2">
 				<svg viewBox="0 0 300 300" width="300" height="300" fill="none">
-					<path d="M150,280 C80,260 30,200 50,140 C70,80 140,50 200,80 C260,110 270,180 230,220 C190,260 130,240 130,200 C130,160 170,140 190,160" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
-					<circle cx="190" cy="160" r="6" fill="#DC2626" opacity="0.6"/>
+					<path d="M150,280 C80,260 30,200 50,140 C70,80 140,50 200,80 C260,110 270,180 230,220 C190,260 130,240 130,200 C130,160 170,140 190,160" stroke="var(--geo-red)" stroke-width="2" stroke-linecap="round"/>
+					<circle cx="190" cy="160" r="6" fill="var(--geo-red)" opacity="0.6"/>
 				</svg>
 			</div>
 			<!-- Biomorphic blob outline -->
 			<div class="geo geo-3">
 				<svg viewBox="0 0 240 200" width="240" height="200" fill="none">
-					<path d="M60,100 C60,40 120,20 160,50 C200,80 220,60 220,100 C220,140 200,170 150,170 C100,170 60,160 60,100Z" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
-					<circle cx="130" cy="95" r="4" fill="#15803D" opacity="0.6"/>
-					<circle cx="170" cy="85" r="3" fill="#15803D" opacity="0.6"/>
+					<path d="M60,100 C60,40 120,20 160,50 C200,80 220,60 220,100 C220,140 200,170 150,170 C100,170 60,160 60,100Z" stroke="var(--geo-green)" stroke-width="2" stroke-linecap="round"/>
+					<circle cx="130" cy="95" r="4" fill="var(--geo-green)" opacity="0.6"/>
+					<circle cx="170" cy="85" r="3" fill="var(--geo-green)" opacity="0.6"/>
 				</svg>
 			</div>
 			<!-- Wire balance / mobile arm -->
@@ -80,36 +96,36 @@
 					<path d="M20,90 L260,70" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
 					<path d="M80,90 L60,150" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
 					<path d="M200,75 L220,140" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-					<circle cx="60" cy="155" r="14" fill="#EAB308" opacity="0.5"/>
-					<circle cx="60" cy="155" r="14" fill="none" stroke="#EAB308" stroke-width="1.5"/>
-					<circle cx="220" cy="148" r="20" fill="#EA580C" opacity="0.35"/>
-					<circle cx="220" cy="148" r="20" fill="none" stroke="#EA580C" stroke-width="1.5"/>
+					<circle cx="60" cy="155" r="14" fill="var(--geo-yellow)" opacity="0.5"/>
+					<circle cx="60" cy="155" r="14" fill="none" stroke="var(--geo-yellow)" stroke-width="1.5"/>
+					<circle cx="220" cy="148" r="20" fill="var(--geo-orange)" opacity="0.35"/>
+					<circle cx="220" cy="148" r="20" fill="none" stroke="var(--geo-orange)" stroke-width="1.5"/>
 					<path d="M140,80 L140,30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
 				</svg>
 			</div>
 			<!-- Continuous flowing line -->
 			<div class="geo geo-5">
 				<svg viewBox="0 0 200 260" width="200" height="260" fill="none">
-					<path d="M30,250 C30,250 10,180 60,140 C110,100 40,60 80,20 C120,-20 180,40 160,100 C140,160 180,200 170,250" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+					<path d="M30,250 C30,250 10,180 60,140 C110,100 40,60 80,20 C120,-20 180,40 160,100 C140,160 180,200 170,250" stroke="var(--geo-purple)" stroke-width="2" stroke-linecap="round"/>
 				</svg>
 			</div>
 			<!-- Abstract face / single-line portrait -->
 			<div class="geo geo-6">
 				<svg viewBox="0 0 180 220" width="180" height="220" fill="none">
 					<path d="M90,20 C140,20 160,60 160,100 C160,140 140,180 100,190 C60,200 30,170 30,130 C30,100 40,70 60,50" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-					<circle cx="80" cy="95" r="4" fill="#1D4ED8" opacity="0.7"/>
-					<circle cx="120" cy="90" r="4" fill="#1D4ED8" opacity="0.7"/>
-					<path d="M85,130 C95,140 110,138 118,128" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/>
+					<circle cx="80" cy="95" r="4" fill="var(--geo-blue)" opacity="0.7"/>
+					<circle cx="120" cy="90" r="4" fill="var(--geo-blue)" opacity="0.7"/>
+					<path d="M85,130 C95,140 110,138 118,128" stroke="var(--geo-red)" stroke-width="1.5" stroke-linecap="round"/>
 				</svg>
 			</div>
 			<!-- Dangling dots on a curve -->
 			<div class="geo geo-7">
 				<svg viewBox="0 0 320 160" width="320" height="160" fill="none">
-					<path d="M10,80 C80,20 160,140 240,60 C280,20 310,50 310,80" stroke="#EA580C" stroke-width="2" stroke-linecap="round"/>
-					<line x1="80" y1="48" x2="80" y2="90" stroke="#EA580C" stroke-width="1.5" stroke-linecap="round"/>
-					<circle cx="80" cy="96" r="6" fill="#EAB308" opacity="0.55"/>
-					<line x1="200" y1="100" x2="200" y2="140" stroke="#EA580C" stroke-width="1.5" stroke-linecap="round"/>
-					<circle cx="200" cy="148" r="8" fill="#DC2626" opacity="0.45"/>
+					<path d="M10,80 C80,20 160,140 240,60 C280,20 310,50 310,80" stroke="var(--geo-orange)" stroke-width="2" stroke-linecap="round"/>
+					<line x1="80" y1="48" x2="80" y2="90" stroke="var(--geo-orange)" stroke-width="1.5" stroke-linecap="round"/>
+					<circle cx="80" cy="96" r="6" fill="var(--geo-yellow)" opacity="0.55"/>
+					<line x1="200" y1="100" x2="200" y2="140" stroke="var(--geo-orange)" stroke-width="1.5" stroke-linecap="round"/>
+					<circle cx="200" cy="148" r="8" fill="var(--geo-red)" opacity="0.45"/>
 				</svg>
 			</div>
 		</div>
@@ -146,7 +162,7 @@
 				</a>
 			</div>
 		</main>
-		<button class="theme-toggle" aria-label="Toggle dark mode">
+		<button class="theme-toggle" type="button" aria-label="Use dark mode" aria-pressed="false">
 			<svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
 				<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
 			</svg>
@@ -155,17 +171,30 @@
 			</svg>
 		</button>
 		<script>
-			const toggle = document.querySelector('.theme-toggle');
-			const root = document.documentElement;
-			const saved = localStorage.getItem('theme');
-			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-			if (saved) root.setAttribute('data-theme', saved);
-			else if (prefersDark) root.setAttribute('data-theme', 'dark');
-			toggle.addEventListener('click', () => {
-				const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-				root.setAttribute('data-theme', next);
-				localStorage.setItem('theme', next);
-			});
+			(() => {
+				const toggle = document.querySelector('.theme-toggle');
+				const root = document.documentElement;
+				const getTheme = () => root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+				const applyTheme = (theme) => {
+					root.setAttribute('data-theme', theme);
+					toggle.setAttribute('aria-label', theme === 'dark' ? 'Use light mode' : 'Use dark mode');
+					toggle.setAttribute('aria-pressed', String(theme === 'dark'));
+				};
+
+				if (!toggle) return;
+
+				applyTheme(getTheme());
+				toggle.addEventListener('click', () => {
+					const next = getTheme() === 'dark' ? 'light' : 'dark';
+					applyTheme(next);
+
+					try {
+						localStorage.setItem('theme', next);
+					} catch {
+						/* Theme persistence is optional. */
+					}
+				});
+			})();
 		</script>
 	</body>
 </html>
