@@ -1,3 +1,17 @@
+# Operating-system files
 .DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Local environment and assistant files
+.env
+.env.*
+!.env.example
 .claude/
 CLAUDE.md
