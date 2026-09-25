@@ -339,8 +339,8 @@ h1.bio {
 		padding: 12svh 24px 12svh;
 	}
 
-	h1.bio {
-		font-size: 1.125rem;
+	.social-link {
+		font-size: 1rem;
 	}
 
 	.mark {
@@ -371,15 +371,7 @@ h1.bio {
 		padding: 10svh 20px 10svh;
 	}
 
-	h1.bio {
-		font-size: 1rem;
-	}
-
 	.socials {
 		gap: 16px;
-	}
-
-	.social-link {
-		font-size: 0.8125rem;
 	}
 }
